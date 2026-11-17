@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  background: #fbfaf8;
+  color: #20211f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hero-art {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 53% 54%, rgb(255 255 255 / 75%) 0, rgb(255 255 255 / 18%) 22%, transparent 47%),
+    linear-gradient(140deg, #d6dac8 0%, #c3c9b3 48%, #a9b29b 100%);
+}
+
+.hero-art::before {
+  position: absolute;
+  inset: 12%;
+  z-index: -1;
+  border: 1px solid rgb(255 255 255 / 34%);
+  border-radius: 50%;
+  content: "";
+  transform: rotate(-24deg) scaleX(1.25);
+}
+
+.hero-art::after {
+  position: absolute;
+  right: -15%;
+  bottom: -40%;
+  left: -15%;
+  z-index: -1;
+  height: 75%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, rgb(60 66 52 / 0%), rgb(60 66 52 / 12%));
+  content: "";
+}
+
+.hero-orbit {
+  position: absolute;
+  z-index: -1;
+  width: 70%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 27%);
+  border-radius: 50%;
+}
+
+.hero-orbit-one {
+  transform: scaleY(0.52) rotate(34deg);
+}
+
+.hero-orbit-two {
+  transform: scaleY(0.52) rotate(-34deg);
+}
+
+.hero-headphones {
+  display: grid;
+  width: clamp(150px, 30vw, 270px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 43% 57% 51% 49% / 49% 44% 56% 51%;
+  background: linear-gradient(145deg, #777e6d, #424a3f);
+  box-shadow: 22px 34px 50px rgb(46 53 39 / 25%), inset 5px 7px 14px rgb(255 255 255 / 24%), inset -9px -11px 20px rgb(28 34 27 / 37%);
+  color: #d7ddcb;
+  transform: rotate(-13deg);
+}
+
+.hero-headphones svg {
+  width: 63%;
+  height: 63%;
+  filter: drop-shadow(5px 8px 7px rgb(27 31 25 / 25%));
+  transform: rotate(13deg);
+}
+
+.hero-label {
+  position: absolute;
+  top: 13%;
+  left: 9%;
+  color: rgb(44 50 39 / 68%);
+  font-size: clamp(8px, 1vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.65;
+}
+
+.hero-caption {
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  color: rgb(255 255 255 / 87%);
+  font-size: clamp(8px, 1vw, 10px);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.hero-sparkle {
+  position: absolute;
+  top: 20%;
+  right: 17%;
+  color: #f4f4e3;
+}
+
+.hero-sticker {
+  position: absolute;
+  right: 14%;
+  bottom: 18%;
+  display: grid;
+  width: 62px;
+  aspect-ratio: 1;
+  place-content: center;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 50%;
+  background: rgb(252 251 244 / 72%);
+  color: #494e3e;
+  text-align: center;
+  transform: rotate(11deg);
+}
+
+.hero-sticker span {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.hero-sticker strong {
+  margin-top: 3px;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+.product-art::before,
+.product-art::after {
+  position: absolute;
+  border: 1px solid rgb(255 255 255 / 44%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.product-art::before {
+  width: 73%;
+  aspect-ratio: 1;
+}
+
+.product-art::after {
+  width: 87%;
+  aspect-ratio: 1;
+  opacity: 0.55;
+}
+
+.product-halo {
+  position: absolute;
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.09;
+  filter: blur(2px);
+  transition: transform 400ms ease;
+}
+
+.product-icon {
+  z-index: 1;
+  filter: drop-shadow(0 13px 10px rgb(43 39 34 / 13%));
+  transition: transform 400ms ease;
+}
+
+.group:hover .product-halo {
+  transform: scale(1.16);
+}
+
+.group:hover .product-icon {
+  transform: translateY(-5px) rotate(-3deg);
+}
+
+.newsletter-art {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 86% 30%, rgb(216 241 109 / 20%) 0, transparent 33%),
+    linear-gradient(115deg, #2e312b, #42483a);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  border: 1px solid rgb(0 0 0 / 11%);
+  border-radius: 10px;
+  background: #fff;
+  padding: 11px 12px;
+  color: #20211f;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.form-input::placeholder {
+  color: #a0a09b;
+}
+
+.form-input:focus {
+  border-color: #9aa77a;
+  box-shadow: 0 0 0 3px rgb(216 241 109 / 24%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
